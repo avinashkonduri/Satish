@@ -1,0 +1,17 @@
+<p>testimg works!</p>
+<div *ngFor="let item of foodArray">
+    {{item}}
+</div>
+
+<div *ngFor="let animal of animals">
+  {{animal.name}}
+</div>
+
+<select (change)="onChange($event)">
+  <option *ngFor="let animal of animals" [value]="animal.name">{{animal.name}}</option>
+</select>
+<br><br/>
+<button type="submit" value="Submit">Submit</button>
+<br><br/>
+<input type="text" (keyup)="onKey($event)"><br/>
+{{value}}
