@@ -76,11 +76,6 @@ export class UserListComponent implements OnInit {
       }
       this.doughnutChartData.push(...this.regCount, ...this.logCount, ...this.activeCount, ...this.inActiveCount);
       this.chart.chart.update();
-      // console.log(this.doughnutChartLabels);
-      // console.log(this.doughnutChartData);
-      // console.log(this.logCount);
-      // console.log(this.regCount);
-
     });
   }
 
