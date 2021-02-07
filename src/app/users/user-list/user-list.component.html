@@ -1,0 +1,39 @@
+<table border="1">
+    <thead>
+      <tr>
+        <th>User Name</th>
+        <th>Email</th>
+        <th>Gender</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr *ngFor="let user of userList">
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.gender}}</td>
+              <td>{{user.status}}</td>
+          </tr>
+    </tbody>
+</table>
+<div>
+  <div style="display: block;">
+    <canvas baseChart
+      [data]="doughnutChartData"
+      [labels]="doughnutChartLabels"
+      [chartType]="doughnutChartType"
+      [colors]="doughnutColors">
+    </canvas>
+  </div>
+<div class="container">
+	<div class="d-flex">
+
+		<div class="col">
+			<div class="card">
+				<div class="card-body p-1 m-0">
+					<canvas id="canvas" style="display: block;width: 500px !important;height: 500px !important;"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -6,17 +6,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestimgComponent } from './testimg/testimg.component';
 import { Category } from './category/category.component';
-
+import { UserListComponent } from './users/user-list/user-list.component';
+import { ChartsModule } from 'ng2-charts';
+// API Request module
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     TestimgComponent,
-    Category
+    Category,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
