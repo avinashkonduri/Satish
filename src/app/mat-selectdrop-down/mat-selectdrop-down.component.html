@@ -1,0 +1,29 @@
+<mat-form-field appearance="fill">
+  <mat-label>Test Suite</mat-label>
+  <mat-select [(ngModel)]="selectedValue" name="food" (selectionChange)='getSelected(selectedValue)'>
+    <mat-option *ngFor="let food of foods" [value]="food.value">
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<div *ngIf="isMultiSelect; else elseBlock">
+  <mat-form-field>
+    <mat-select placeholder="Toppings" [(value)]="selectedToppings" multiple>
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<ng-template #elseBlock>
+  <div>
+    <mat-form-field>
+      <mat-select placeholder="Toppings" [(value)]="selectedToppings">
+        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+</ng-template>
+
+<p>
+  {{selectedToppings | json}}
+</p>
