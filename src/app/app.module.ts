@@ -16,16 +16,20 @@ import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { DemoMaterialModule } from './material-module';
+import { SlideToggleComponent,MatDialogDemo } from './slide-toggle/slide-toggle.component';
+import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
 
 @NgModule({
-  entryComponents: [MatSelectdropDownComponent],
+  entryComponents: [MatSelectdropDownComponent,MatDialogDemo],
   declarations: [
     AppComponent,
     TestimgComponent,
     Category,
     UserListComponent,
-    MatSelectdropDownComponent
-
+    MatSelectdropDownComponent,
+    SlideToggleComponent,
+    MatDialogComponent,
+    MatDialogDemo
   ],
   imports: [
     BrowserModule,

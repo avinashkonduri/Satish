@@ -23,7 +23,7 @@ export class MatSelectdropDownComponent implements OnInit {
   selectedToppings: any;
 
   isMultiSelect: boolean= true;
-  constructor(private cdr: ChangeDetectorRef,) { }
+  constructor() { }
 
   ngOnInit(): void {
     //this.isMultiSelect = false;
@@ -46,4 +46,5 @@ export class MatSelectdropDownComponent implements OnInit {
   ngAfterContentInit() {
     this.getSelected(this.selectedValue);
   }
+
 }
