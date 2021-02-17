@@ -38,7 +38,7 @@ export class SlideToggleComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(MatDialogDemo, {
       width: '750px',
-      data: { value: this.foods[0].value, viewValue: this.foods[0].viewValue }
+      // data: { value: this.foods[0].value, viewValue: this.foods[0].viewValue }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -62,15 +62,17 @@ export class MatDialogDemo implements OnInit {
     { value: 'lobby', viewValue: 'Lobby' },
     { value: 'pro', viewValue: 'Promostions' }
   ];
-  toppingList = ['Responsible Gam', 'Tournment', 'Banking', 'BonusWheel', 'Livechat'];
+  toppingList!: string[]; // Need add testPatterns!= string[] , testLocations!= string[]
   selectedToppings: any;
 
   isMultiSelect: boolean = true;
   constructor(public dialogRef: MatDialogRef<MatDialogDemo>,
-    @Inject(MAT_DIALOG_DATA) public data: Food) { }
+    ) { }
   ngOnInit(): void {
-    confirm(this.data.viewValue);
-    this.selectedValue = this.data.value;
+    this.toppingList = ['Responsible Gam', 'Tournment', 'Banking', 'BonusWheel', 'Livechat']; // this.testLocations = []
+
+    // confirm(this.data.viewValue);
+    // this.selectedValue = this.data.value;
   }
 
   getSelected(selected: any) {
