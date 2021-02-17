@@ -1,7 +1,6 @@
 import { ChangeDetectorRef, Inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatDialogComponent } from '../mat-dialog/mat-dialog.component';
 
 @Component({
   selector: 'ak-slide-toggle',
