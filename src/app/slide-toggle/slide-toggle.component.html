@@ -8,8 +8,9 @@
     </mat-card>
   </div>
   <div class="col-md-2">
-    To Pay <mat-slide-toggle (change)="change($event)" [checked]="checked">To-pay</mat-slide-toggle>
-    <p>{{checked}}</p>
+    Desktop <mat-slide-toggle (change)="change($event)" [checked]="checked">Mobile</mat-slide-toggle>
+    <p>{{selectedPlatform}}</p>
+
   </div>
 </div>
 <p>

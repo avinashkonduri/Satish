@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-module';
 import { SlideToggleComponent,MatDialogDemo } from './slide-toggle/slide-toggle.component';
 import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
+import { UiDegitestbuddyComponent } from './ui-degitestbuddy/ui-degitestbuddy.component';
 
 @NgModule({
   entryComponents: [MatSelectdropDownComponent,MatDialogDemo],
@@ -29,7 +30,8 @@ import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
     MatSelectdropDownComponent,
     SlideToggleComponent,
     MatDialogComponent,
-    MatDialogDemo
+    MatDialogDemo,
+    UiDegitestbuddyComponent
   ],
   imports: [
     BrowserModule,
