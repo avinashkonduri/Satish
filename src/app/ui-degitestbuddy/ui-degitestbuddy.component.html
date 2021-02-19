@@ -1,4 +1,4 @@
-<div class="media border border-warning mt-2">
+<div class="media border border-warning mt-2 w-50 mx-auto">
   <div class="align-self-start mx-3">Info<mat-icon>info</mat-icon></div>
   <div class="media-body">
     <h5 class="mt-0" style="color: #1bbed1" >
@@ -22,3 +22,21 @@
     </mat-select>
   </mat-form-field>
 </p>
+
+<p>
+  <mat-form-field appearance="outline" class="redColor">
+    <mat-label>Platform</mat-label>
+    <mat-select [(value)]="selectedPlatform">
+      <mat-option *ngFor="let platform of testPlatforms" value="platform">{{platform}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</p>
+
+<mat-form-field floatLabel="always" appearance="outline">
+  <mat-slide-toggle [(ngModel)]="selectedPlatform">Override Speed</mat-slide-toggle>
+  <textarea matInput hidden></textarea>
+</mat-form-field>
+<mat-form-field floatLabel="always" appearance="outline">
+  <mat-slide-toggle [(ngModel)]="selectedPlatform">Override Speed</mat-slide-toggle>
+  <textarea matInput hidden></textarea>
+</mat-form-field>
