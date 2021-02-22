@@ -1,42 +1,61 @@
-<div class="media border border-warning mt-2 w-50 mx-auto">
-  <div class="align-self-start mx-3">Info<mat-icon>info</mat-icon></div>
-  <div class="media-body">
-    <h5 class="mt-0" style="color: #1bbed1" >
-      <strong>Please fill out form and Click "Run Test" button to start</strong></h5>
-    <p><strong>Market : </strong>Country <span class="text-muted">.e.g Sweden , Germany</span></p>
-      <p><strong>TestSuite : </strong>Department <span class="text-muted">.e.g ACQ , Lobby</span></p>
-      <p><strong>Report Address: </strong>Email address to send report to <span class="text-muted">.e.g user@</span>
+<div class="container">
+  <div class="media border border-warning mt-2 w-100">
+    <div class="align-self-start mx-3">Info<mat-icon>info</mat-icon></div>
+    <div class="media-body">
+      <h5 class="mt-0" style="color: #1bbed1" >
+        <strong>Please fill out form and Click "Run Test" button to start</strong></h5>
+      <p><strong>Market : </strong>Country <span class="text-muted">.e.g Sweden , Germany</span></p>
+        <p><strong>TestSuite : </strong>Department <span class="text-muted">.e.g ACQ , Lobby</span></p>
+        <p><strong>Report Address: </strong>Email address to send report to <span class="text-muted">.e.g user@</span>
+    </div>
   </div>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Outline form field</mat-label>
+      <input matInput placeholder="Placeholder">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Platform</mat-label>
+      <mat-select [(value)]="selectedPlatform">
+        <mat-option *ngFor="let platform of testPlatforms" value="platform">{{platform}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline" class="redColor">
+      <mat-label>Platform</mat-label>
+      <mat-select [(value)]="selectedPlatform">
+        <mat-option *ngFor="let platform of testPlatforms" value="platform">{{platform}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
+
+
+    <mat-slide-toggle [(ngModel)]="selectedPlatform">Override Speed</mat-slide-toggle>
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-slide-toggle [(ngModel)]="selectedPlatform">Override Speed</mat-slide-toggle>
+    <textarea matInput hidden></textarea>
+  </mat-form-field>
 </div>
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Platform</mat-label>
-    <mat-select [(value)]="selectedPlatform">
-      <mat-option *ngFor="let platform of testPlatforms" value="platform">{{platform}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-</p>
+<div class="container">
+  <div class="row">
+      <div class="col-3 mb-3" *ngFor="let btn of testButtons">
+          <button class="btn btn-primary" (click)="getTestCases($event)" [value]="btn">{{btn}}</button>
+      </div>
+  </div>
+  <section>
+    <div>
+      <div class="row ml-5">
+        <ul class="col-lg-6" *ngFor="let big of big6">
+          <li>{{big}}</li>
+        </ul>
+      </div>
+    </div>
+    </section>
+</div>
+<!-- <div class="btn btn-primary" type="submit" (click)="myBig6()">GetList</div> -->
 
-<p>
-  <mat-form-field appearance="outline" class="redColor">
-    <mat-label>Platform</mat-label>
-    <mat-select [(value)]="selectedPlatform">
-      <mat-option *ngFor="let platform of testPlatforms" value="platform">{{platform}}</mat-option>
-    </mat-select>
-  </mat-form-field>
-</p>
 
-<mat-form-field floatLabel="always" appearance="outline">
-  <mat-slide-toggle [(ngModel)]="selectedPlatform">Override Speed</mat-slide-toggle>
-  <textarea matInput hidden></textarea>
-</mat-form-field>
-<mat-form-field floatLabel="always" appearance="outline">
-  <mat-slide-toggle [(ngModel)]="selectedPlatform">Override Speed</mat-slide-toggle>
-  <textarea matInput hidden></textarea>
-</mat-form-field>
