@@ -1,0 +1,24 @@
+<form [formGroup]="regrForm" (ngSubmit)="onSubmit()">
+
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName">
+  </label>
+
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName">
+  </label>
+
+  <label>
+    email:
+    <input type="email" formControlName="email">
+  </label>
+
+  <label>
+    password:
+    <input type="password" formControlName="password">
+  </label>
+
+  <button type="submit" [disabled]="!regrForm.valid">Submit</button>
+</form>

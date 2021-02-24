@@ -19,3 +19,7 @@ p {
   color: #ffc107 !important;
 }
 
+.bg-image {
+  background: url(../../assets/bgimg.jpg);
+  background-size: cover;
+}

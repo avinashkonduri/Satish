@@ -4,3 +4,10 @@ export interface User {
   gender?:string;
   status?:string;
 }
+
+export interface users {
+  firstName?:string;
+  lastName?:string;
+  email?:string;
+  password?:string;
+}

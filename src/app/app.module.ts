@@ -19,6 +19,8 @@ import { DemoMaterialModule } from './material-module';
 import { SlideToggleComponent,MatDialogDemo } from './slide-toggle/slide-toggle.component';
 import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
 import { UiDegitestbuddyComponent } from './ui-degitestbuddy/ui-degitestbuddy.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   entryComponents: [MatSelectdropDownComponent,MatDialogDemo],
@@ -31,7 +33,9 @@ import { UiDegitestbuddyComponent } from './ui-degitestbuddy/ui-degitestbuddy.co
     SlideToggleComponent,
     MatDialogComponent,
     MatDialogDemo,
-    UiDegitestbuddyComponent
+    UiDegitestbuddyComponent,
+    RegistrationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
