@@ -22,6 +22,7 @@ import { UiDegitestbuddyComponent } from './ui-degitestbuddy/ui-degitestbuddy.co
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { MatAccordiansComponent } from './mat-accordians/mat-accordians.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   entryComponents: [MatSelectdropDownComponent,MatDialogDemo],
@@ -49,7 +50,8 @@ import { MatAccordiansComponent } from './mat-accordians/mat-accordians.componen
     DemoMaterialModule,
     MatFormFieldModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatToolbarModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
