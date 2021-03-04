@@ -1,0 +1,44 @@
+<h1>Hello</h1>
+<mat-sidenav-container class="example-container" *ngIf="shouldRun">
+  <mat-sidenav #sidenav mode="side">
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon class="mr-1">android</mat-icon>
+            <a [routerLink]="['/ui-automation']" class="mt-1">UI Automation</a>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <div class="container">
+          <mat-icon class="mr-1">grid_view</mat-icon>
+          <a [routerLink]="['/overview']">Overview</a> <br />
+        </div>
+        <div class="container">
+          <mat-icon class="mr-1">shopping_bag</mat-icon>
+          <a [routerLink]="['/ui-automation']">Market Summary Statsics</a>
+        </div>
+
+
+
+      </mat-expansion-panel>
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon class="mr-1">backup</mat-icon>
+            <a [routerLink]="['/ui-automation']" class="mt-1">API Automation</a>
+          </mat-panel-title>
+
+        </mat-expansion-panel-header>
+        <a [routerLink]="['/overview']">Overview</a> <br />
+        <a [routerLink]="['/ui-automation']">Market Summary Statsics</a>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.toggle()">Toggle</button></p>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

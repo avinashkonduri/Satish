@@ -21,6 +21,7 @@ import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
 import { UiDegitestbuddyComponent } from './ui-degitestbuddy/ui-degitestbuddy.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { MatAccordiansComponent } from './mat-accordians/mat-accordians.component';
 
 @NgModule({
   entryComponents: [MatSelectdropDownComponent,MatDialogDemo],
@@ -35,7 +36,8 @@ import { LoginComponent } from './login/login.component';
     MatDialogDemo,
     UiDegitestbuddyComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    MatAccordiansComponent
   ],
   imports: [
     BrowserModule,
