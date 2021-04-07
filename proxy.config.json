@@ -1,0 +1,7 @@
+{
+  "/studyapp/*":{
+      "target":"http://18.224.79.72:8081",
+      "secure":false,
+      "logLevel":"debug"
+  }
+}

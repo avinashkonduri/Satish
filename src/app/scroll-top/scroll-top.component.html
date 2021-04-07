@@ -1,0 +1,7 @@
+<!--Scroll to top-->
+<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}" >
+  <button (click)="scrollToTop()" [matTooltip]="windowScrolled ? 'Go to Top' : ''" [ngStyle]="{'cursor':windowScrolled ? 'pointer' : 'default', 'background-color':'#d13f14' }"
+  matTooltipPosition="right">
+      <i class="fas fa-chevron-up"></i>
+  </button>
+</div>

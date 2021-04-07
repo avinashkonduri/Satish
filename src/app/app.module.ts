@@ -14,6 +14,7 @@ import { MatSelectdropDownComponent } from './mat-selectdrop-down/mat-selectdrop
 import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { DemoMaterialModule } from './material-module';
 import { SlideToggleComponent,MatDialogDemo } from './slide-toggle/slide-toggle.component';
@@ -23,6 +24,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { MatAccordiansComponent } from './mat-accordians/mat-accordians.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { ScrollTestComponent } from './scroll-test/scroll-test.component';
+import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 
 @NgModule({
   entryComponents: [MatSelectdropDownComponent,MatDialogDemo],
@@ -38,7 +41,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     UiDegitestbuddyComponent,
     RegistrationComponent,
     LoginComponent,
-    MatAccordiansComponent
+    MatAccordiansComponent,
+    ScrollTestComponent,
+    ScrollTopComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +56,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatTooltipModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },

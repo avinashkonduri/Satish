@@ -1,1 +1,63 @@
-<p>login works!</p>
+
+<div class="my-login-page">
+  <div>
+    <section class="h-100">
+      <div class="container h-100">
+        <div class="row justify-content-md-center h-100">
+          <div class="card-wrapper">
+            <div class="brand">
+              <!-- <img src="img/logo.jpg"> -->
+            </div>
+            <div class="card fat">
+              <div class="card-body">
+                <h4 class="card-title">Login</h4>
+                <form #loginForm="ngForm">
+                  <h6 class="alert-danger">{{errorMsg}}</h6>
+                  <div class="form-group">
+                    <label for="email">E-Mail Address</label>
+                    <input tabindex="1" id="email" type="email" class="form-control" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" [(ngModel)]="user.email" #email="ngModel" required name="email">
+                    <span *ngIf="email.errors && (email.touched || email.dirty)">Please enter a valid email</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <span (click)="showHide()">
+                      <i class="input-icons" data-toggle="tooltip" [title]="hide ? 'Hide Password' : 'Show Password'" [ngClass]="hide ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
+                    </span>
+                    <input tabindex="2" id="password" [type]="pass" [(ngModel)]="user.password" #password="ngModel" name="password" class="form-control" required data-eye>
+                    <!-- <i style="position: absolute;right: 38px;top: 57%;" [ngClass]="{'fas fa-eye-slash': 'fas fa-eye'}" (click)="showHide()"></i> -->
+                    <!-- <mat-icon class="placeholder" (click)="showHide()">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon> -->
+                    <!-- <span *ngIf="password.errors &&(password.touched || password.dirty)">Password should have minimum 8 characters</span> -->
+                  </div>
+
+                  <div class="form-group">
+                    <label>
+                      <!-- <input tabindex="4" type="checkbox" [(ngModel)]="user.rememberme" #rememberme="ngModel" name="remember"> Remember Me -->
+                    </label>
+                    <a tabindex="5" routerLink="/auth/forgot-password" class="float-right">
+                      Forgot Password?
+                    </a>
+                  </div>
+
+                  <div class="form-group no-margin">
+                    <button tabindex="3" [disabled]="loading || loginForm.invalid" class="btn btn-primary btn-block" (click)="login()">
+                      Login
+                      <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    </button>
+                  </div>
+                  <!-- <div class="margin-top20 text-center">
+                  Don't have an account? <a href="register.html">Create One</a>
+                </div> -->
+                </form>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+<div *ngIf="!isValidLicense">
+  <h5 align="center"> Your license is not valid. Please contact Administrator.</h5>
+</div>

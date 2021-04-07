@@ -1,24 +1,26 @@
-<mat-form-field appearance="fill">
+<!-- <mat-form-field appearance="fill">
   <mat-label>Test Suite</mat-label>
   <mat-select [(ngModel)]="selectedValue" name="food" (selectionChange)='getSelected(selectedValue)'>
     <mat-option *ngFor="let food of foods" [value]="food.value">
       {{food.viewValue}}
     </mat-option>
   </mat-select>
-</mat-form-field>
-  <mat-form-field *ngIf="isMultiSelect; else elseBlock">
-    <mat-select placeholder="Toppings" [(value)]="selectedToppings" multiple>
+</mat-form-field> -->
+  <mat-form-field>
+    <mat-select placeholder="Toppings" [(value)]="selectedToppings" (selectionChange)='getSelected(selectedToppings)'>
       <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
     </mat-select>
   </mat-form-field>
-<ng-template #elseBlock>
     <mat-form-field>
-      <mat-select placeholder="Toppings" [(value)]="selectedToppings">
-        <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+      <mat-select placeholder="Toppings" [(value)]="selectedValue">
+        <mat-option *ngFor="let topping of newArray" [value]="topping">{{topping}}</mat-option>
       </mat-select>
     </mat-form-field>
-
-</ng-template>
+<!-- <mat-form-field>
+  <mat-select placeholder="Toppings" [(value)]="selectedToppings">
+    <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+  </mat-select>
+</mat-form-field> -->
 
 <p>
   {{selectedToppings | json}}

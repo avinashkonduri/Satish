@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatMenuTrigger } from '@angular/material/menu';
 import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
@@ -8,6 +9,8 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./mat-accordians.component.css']
 })
 export class MatAccordiansComponent implements OnInit {
+  @ViewChild(MatMenuTrigger)
+  trigger!: MatMenuTrigger;
   mode = new FormControl('over');
   shouldRun = true;
   panelOpenState = false;
@@ -32,5 +35,13 @@ export class MatAccordiansComponent implements OnInit {
     if (!this.isExpanded) {
       this.isShowing = false;
     }
+  }
+
+  openMyMenu() {
+    this.trigger.toggleMenu();
+  }
+  closeMyMenu() {
+    this.trigger.closeMenu();
+    console.log('close')
   }
 }
