@@ -26,6 +26,7 @@ import { MatAccordiansComponent } from './mat-accordians/mat-accordians.componen
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { ScrollTestComponent } from './scroll-test/scroll-test.component';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
+import { NewScrollTopComponent } from './new-scroll-top/new-scroll-top.component';
 
 @NgModule({
   entryComponents: [MatSelectdropDownComponent,MatDialogDemo],
@@ -44,6 +45,7 @@ import { ScrollTopComponent } from './scroll-top/scroll-top.component';
     MatAccordiansComponent,
     ScrollTestComponent,
     ScrollTopComponent,
+    NewScrollTopComponent,
   ],
   imports: [
     BrowserModule,
