@@ -11,8 +11,10 @@ interface Food {
 })
 export class MatSelectdropDownComponent implements OnInit {
   selectedValue!: string[];
+  selectedUrl!: string[];
   selectedCar!: string;
   newArray!: string[];
+  urls!: string[];
   foods: Food[] = [
     {value: 'acq', viewValue: 'ACQ'},
     {value: 'lobby', viewValue: 'Lobby'},
@@ -20,7 +22,7 @@ export class MatSelectdropDownComponent implements OnInit {
   ];
 
   toppingList = ['Responsible Gam', 'Tournment', 'Banking', 'BonusWheel', 'Livechat','led'];
-
+  toppingList1 = ['Responsible Gam', 'Tournment', 'Banking', 'BonusWheel', 'Livechat','led'];
   selectedToppings!: string[];
 
   isMultiSelect: boolean= true;
@@ -28,6 +30,7 @@ export class MatSelectdropDownComponent implements OnInit {
 
   ngOnInit(): void {
     this.newArray = ['LEDMOBLE'];
+    this.urls = ['url1','url2','url3','url4'];
     //this.isMultiSelect = false;
   }
 
@@ -36,18 +39,11 @@ export class MatSelectdropDownComponent implements OnInit {
     if(selected == ["led"]){
       this.newArray = ["LEDMOBILE"];
       this.selectedValue = this.newArray[0] as unknown as string[];
-    }    // if(selected[0] == 'lobby'){
-    //   this.toppingList = ['Responsible Gam1', 'Tournment1', 'Banking1', 'BonusWheel1', 'Livechat1'];
-    //   this.isMultiSelect = false;
-    // }
-    // else if(selected[0] == 'pro'){
-    //   this.toppingList= ['Responsible Gam2', 'Tournment2', 'Banking2', 'BonusWheel2', 'Livechat2'];
-    //   this.isMultiSelect = true;
-    // }
-    // else if(selected[0] == 'acq'){
-    //   this.toppingList = ['Responsible Gam', 'Tournment', 'Banking', 'BonusWheel', 'Livechat'];
-    //   this.isMultiSelect = true;
-    // }
+    }
+  }
+  getSelected1(selected: string[]){
+
+   this.selectedUrl = this.urls
   }
   ngAfterContentInit() {
     this.getSelected(this.selectedValue);

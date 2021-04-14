@@ -15,4 +15,13 @@ getTestStatus(id: number): Observable<any> {
     return this.http.post<any>('API_URL/',+id).pipe(tap(resp => {
     }));
   }
+
+  public getUrlInfo(): Observable<any> {
+    return this.http.get('assets/files/urlData.json').pipe(
+        map((res: any) => res),
+        catchError(this.errorHandler));
+      }
+      errorHandler(error: Response) {
+        return observableThrowError(error);
+    }
 }

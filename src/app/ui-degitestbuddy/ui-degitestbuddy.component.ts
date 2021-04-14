@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceNameService } from '../services/service-name.service';
 
 @Component({
   selector: 'ak-ui-degitestbuddy',
@@ -10,11 +11,18 @@ export class UiDegitestbuddyComponent implements OnInit {
   selectedPlatform!: string;
   big6: string[] = [];
   testButtons: string[] = ['Test1', 'Test2', 'Test3', 'Test4']
-  constructor() { }
+  constructor(private urlService: ServiceNameService) { }
 
+  generateUrl() {
+    this.urlService.getUrlInfo().subscribe(
+        access => {
+          console.log(access);
+        });
+}
   ngOnInit(): void {
     this.testPlatforms = ["Desktop", "Mobile"];
     this.selectedPlatform = this.testPlatforms[0];
+    this.generateUrl();
     //this.myBig6();
   }
 

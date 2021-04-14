@@ -1,1 +1,6 @@
-<button *ngIf="isShow" (click)="gotoTop()">👆</button>
+<span class="btn-scroll-top btn-scroll" [ngStyle]="{'bottom.px': isShowBtnScrollbottom ? '50' : 10}" (click)="scrollTo('scrollTop')" *ngIf="isShowBtnScrollTop">
+  <img src="https://i7.pngguru.com/preview/472/148/27/arrow-computer-icons-information-button-bottom.jpg" width="20">
+</span>
+<span class="btn-scroll-bottom btn-scroll" (click)="scrollTo('scrollbottom')" *ngIf="isShowBtnScrollbottom">
+  <img src="https://i7.pngguru.com/preview/472/148/27/arrow-computer-icons-information-button-bottom.jpg" width="20">
+</span>

@@ -7,35 +7,35 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./new-scroll-top.component.css']
 })
 export class NewScrollTopComponent implements OnInit {
+   // Scroll
+   // Scroll
+  public isShowBtnScrollTop!: boolean;
+   public isShowBtnScrollbottom!: boolean;
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
-  isShow!: boolean;
-  topPosToStartShowing = 100;
 
-  @HostListener('window:scroll')
-  checkScroll() {
+  // new Scroll
+  public scrollTo(className: string): void {
+    try {
+      const elementList = document.querySelectorAll('.' + className);
+      const element = elementList[0] as HTMLElement;
+      // https://www.w3schools.com/cssref/pr_scroll-behavior.asp
+      element.scrollIntoView({ behavior: 'smooth' });
+    } catch (error) { }
+  }
 
-    // window의 scroll top
-    // Both window.pageYOffset and document.documentElement.scrollTop returns the same result in all the cases. window.pageYOffset is not supported below IE 9.
-
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-    console.log('[scroll]', scrollPosition);
-
-    if (scrollPosition >= this.topPosToStartShowing) {
-      this.isShow = true;
+  @HostListener('scroll', ['$event'])
+  onScroll(event: any) {
+    // visible height + pixel scrolled >= total height
+    if (event.target.offsetHeight + event.target.scrollTop >= event.target.scrollHeight) {
+      this.isShowBtnScrollbottom = false;
     } else {
-      this.isShow = false;
+      this.isShowBtnScrollbottom = true;
     }
-  }
-
-  // TODO: Cross browsing
-  gotoTop() {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    if (event.target.scrollTop <= 1) {
+      this.isShowBtnScrollTop = false;
+    } else {
+      this.isShowBtnScrollTop = true;
+    }
   }
 }

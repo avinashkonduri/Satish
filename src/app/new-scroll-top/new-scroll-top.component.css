@@ -1,13 +1,35 @@
-p {
-  font-family: Lato;
+.box {
+  /* overflow: scroll; */
+  width: 400px;
+  height: 500px;
 }
 
-button {
-  position: fixed;
-  bottom: 5px;
-  right: 5px;
-  font-size: 20px;
-  text-align: center;
-  border-radius: 5px;
-  outline: none;
+.btn-scroll {
+    visibility: visible;
+    opacity: 0.3;
+    position: absolute;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    transition: visibility 1.0s linear, opacity 1.0s linear;
+}
+
+.btn-scroll-top {
+    transform: rotate(-180deg);
+    bottom: 50px;
+}
+
+.btn-scroll-bottom {
+    bottom: 10px;
+}
+
+.position-relative {
+    position: relative;
 }

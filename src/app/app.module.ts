@@ -27,7 +27,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { ScrollTestComponent } from './scroll-test/scroll-test.component';
 import { ScrollTopComponent } from './scroll-top/scroll-top.component';
 import { NewScrollTopComponent } from './new-scroll-top/new-scroll-top.component';
-
+import { NgScrolltopModule } from 'ng-scrolltop';
 @NgModule({
   entryComponents: [MatSelectdropDownComponent,MatDialogDemo],
   declarations: [
@@ -46,6 +46,7 @@ import { NewScrollTopComponent } from './new-scroll-top/new-scroll-top.component
     ScrollTestComponent,
     ScrollTopComponent,
     NewScrollTopComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -59,7 +60,8 @@ import { NewScrollTopComponent } from './new-scroll-top/new-scroll-top.component
     MatSelectModule,
     ReactiveFormsModule,
     MatToolbarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    NgScrolltopModule
   ],
   providers: [
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } },
