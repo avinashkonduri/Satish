@@ -24,4 +24,14 @@ getTestStatus(id: number): Observable<any> {
       errorHandler(error: Response) {
         return observableThrowError(error);
     }
+
+
+  public getURLData(): Observable<any> {
+    return this.http.get('assets/files/urlData.json').pipe(
+        map((res: any) => res),
+        catchError(this.errorHandler));
+      }
+      errorHandler1(error: Response) {
+        return observableThrowError(error);
+    }
 }

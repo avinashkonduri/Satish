@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { MatSidenav } from '@angular/material/sidenav';
+import { ServiceNameService } from '../services/service-name.service';
 
 @Component({
   selector: 'ak-mat-accordians',
@@ -11,10 +12,11 @@ import { MatSidenav } from '@angular/material/sidenav';
 export class MatAccordiansComponent implements OnInit {
   @ViewChild(MatMenuTrigger)
   trigger!: MatMenuTrigger;
+  dataInfo!: string[];
   mode = new FormControl('over');
   shouldRun = true;
   panelOpenState = false;
-  constructor() { }
+  constructor(private casinoInfo: ServiceNameService) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +26,7 @@ export class MatAccordiansComponent implements OnInit {
   showSubmenu: boolean = false;
   isShowing = false;
   showSubSubMenu: boolean = false;
+
 
   mouseenter() {
     if (!this.isExpanded) {

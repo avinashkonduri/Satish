@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ServiceNameService } from '../services/service-name.service';
 interface Food {
   value: string;
   viewValue: string;
@@ -13,7 +14,7 @@ export class MatSelectdropDownComponent implements OnInit {
   selectedValue!: string[];
   selectedUrl!: string[];
   selectedCar!: string;
-  newArray!: string[];
+  newArray!: any;
   urls!: string[];
   foods: Food[] = [
     {value: 'acq', viewValue: 'ACQ'},
@@ -22,28 +23,63 @@ export class MatSelectdropDownComponent implements OnInit {
   ];
 
   toppingList = ['Responsible Gam', 'Tournment', 'Banking', 'BonusWheel', 'Livechat','led'];
-  toppingList1 = ['Responsible Gam', 'Tournment', 'Banking', 'BonusWheel', 'Livechat','led'];
+  toppingList1 = ['Responsible Gam', 'Tournment', 'Banking', 'BonusWheel', 'Livechat','led','ALL BRE','ALL FGA'];
   selectedToppings!: string[];
 
   isMultiSelect: boolean= true;
-  constructor() { }
+  dataInfo: any;
+  constructor(private casinoInfo: ServiceNameService) { }
 
   ngOnInit(): void {
     this.newArray = ['LEDMOBLE'];
-    this.urls = ['url1','url2','url3','url4'];
+    this.urls = [];
+    this.getCasinoInfo();
     //this.isMultiSelect = false;
   }
 
+  getCasinoInfo(){
+    this.casinoInfo.getURLData().subscribe(info => {
+      this.dataInfo = info;
+    });
+  }
   getSelected(selected: string[]){
 
-    if(selected == ["led"]){
-      this.newArray = ["LEDMOBILE"];
+    if(selected == ["ALL_BRE"]){
+      this.dataInfo.forEach((element: string[]) => {
+        if(selected == element){
+          console.log(selected);
+        }
+      });
+      this.dataInfo.forEach((element: { [x: string]: string; }) => {
+          this.newArray.push(element["Url"])
+      });
+      // this.newArray = ["LEDMOBILE"];
+
       this.selectedValue = this.newArray[0] as unknown as string[];
     }
   }
   getSelected1(selected: string[]){
-
-   this.selectedUrl = this.urls
+    if(selected == ["ALL BRE"]){
+      this.newArray = [];
+      this.selectedUrl = [];
+      this.urls = [];
+      this.newArray = this.dataInfo["ALL BRE"];
+      this.newArray.forEach((element: { Url: string; }) => {
+          this.urls.push(element.Url);
+      });
+      this.selectedUrl = this.urls;
+    }
+    else if(selected == ["ALL FGA"]){
+      this.newArray = [];
+      this.selectedUrl = [];
+      this.urls = [];
+      this.newArray = this.dataInfo["ALL FGA"];
+      this.newArray.forEach((element: { Url: string; }) => {
+          this.urls.push(element.Url);
+      });
+      this.selectedUrl = this.urls;
+    }
+   //this.selectedUrl = this.urls
   }
   ngAfterContentInit() {
     this.getSelected(this.selectedValue);

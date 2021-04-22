@@ -1,22 +1,42 @@
 {
-    "urls": [
+    "ALL BRE": [
       {
-        "id": "1",
-        "url": "url1",
-        "username": "user1",
-        "password": "password1"
+        "Code": "1",
+        "Url": "url1",
+        "Username": "user1",
+        "Password": "password1"
       },
       {
-        "id": "2",
-        "url": "url2",
-        "username": "user2",
-        "password": "password2"
+        "Code": "2",
+        "Url": "url2",
+        "Username": "user2",
+        "Password": "password2"
       },
       {
-        "id": "3",
-        "url": "url3",
-        "username": "user3",
-        "password": "password3"
+        "Code": "3",
+        "Url": "url3",
+        "Username": "user3",
+        "Password": "password3"
+      }
+    ],
+    "ALL FGA": [
+      {
+        "Code": "1",
+        "Url": "url4",
+        "Username": "user4",
+        "Password": "password4"
+      },
+      {
+        "Code": "2",
+        "Url": "url5",
+        "Username": "user5",
+        "Password": "password5"
+      },
+      {
+        "Code": "3",
+        "Url": "url6",
+        "Username": "user6",
+        "Password": "password6"
       }
     ]
   }
